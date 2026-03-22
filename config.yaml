@@ -1,0 +1,52 @@
+name: ETH_TREND_GUARD_V14_BOT
+symbol: ETH-USDT-SWAP
+timeframe: 4h
+
+simulation:
+  enabled: false
+  initial_balance: 1000
+  fee_rate: 0.0005
+  slippage: 0.0005
+
+exchange:
+  exchange_id: okx
+  api_key: 'your_api_key'
+  secret_key: 'your_secret_key'
+  passphrase: 'your_passphrase'
+  sandbox: false
+
+parameters:
+  price_pos_period: 50
+  price_pos_entry: 0.55
+  price_pos_exit: 0.38
+  price_pos_bear_filter: 0.45
+
+  vol_period_fast: 20
+  vol_period_slow: 60
+  vol_ratio_threshold: 1.0
+
+  momentum_period: 10
+  momentum_threshold: 0.012
+  momentum_exit_threshold: -0.015
+
+  atr_period: 14
+  atr_ma_period: 20
+  atr_threshold: 0.65
+
+  market_regime_threshold: 0.7
+
+  stop_loss: 0.012
+  take_profit: 0.035
+  trailing_stop: 0.018
+  max_holding_periods: 20
+
+risk_controls:
+  max_daily_loss: 0.01
+  max_drawdown_stop: 0.15
+  max_position: 1
+  leverage: 1
+
+execution:
+  order_type: market
+  slippage: 0.0005
+  fee_rate: 0.0005
